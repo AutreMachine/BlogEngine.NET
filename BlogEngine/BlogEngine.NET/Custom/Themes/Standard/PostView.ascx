@@ -40,7 +40,7 @@
 
 <article class="post-home post-home-<%=postImagePosition %>" id="post<%=Index %>">
     <div class="post-home-inner">
-        <% if  (postFirstImage.Length > 1)
+        <% if  (postFirstImage.Length > 1 && !postFirstImage.EndsWith("defaultImg.jpg"))
         { %>
             <%=postImageLink %>
         <%} %>
