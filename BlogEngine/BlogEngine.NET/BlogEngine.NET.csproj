@@ -571,7 +571,9 @@
     <Content Include="Custom\Themes\Standard-2017\WidgetContainer.ascx" />
     <Content Include="Custom\Themes\Standard\CommentForm.ascx" />
     <Content Include="Custom\Themes\Standard\CommentView.ascx" />
+    <Content Include="Custom\Themes\Standard\images\blazor.png" />
     <Content Include="Custom\Themes\Standard\images\defaultImg.jpg" />
+    <Content Include="Custom\Themes\Standard\images\unity.png" />
     <Content Include="Custom\Themes\Standard\newsletter.html" />
     <Content Include="Custom\Themes\Standard\PostNavigation.ascx" />
     <Content Include="Custom\Themes\Standard\PostView.ascx" />

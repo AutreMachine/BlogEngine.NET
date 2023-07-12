@@ -7,3 +7,12 @@ BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'http
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 Date: 12/07/2023 14:39:47
 BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 12/07/2023 15:07:19
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 12/07/2023 16:17:01
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 12/07/2023 16:26:37
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.

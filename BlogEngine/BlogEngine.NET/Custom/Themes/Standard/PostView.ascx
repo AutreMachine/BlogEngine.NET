@@ -31,6 +31,15 @@
 
     var postImagePosition = "[CUSTOMFIELD|THEME|Standard|Post Thumbnail position|top/]";
 
+    // Category icon
+    var postCategoryIcon = "";
+    if (Post.Categories != null && Post.Categories.Count() > 0)
+    {
+        //  && Post.Categories[1].Title != "BlogEngine.NET")
+        var categories = Post.Categories.Where(x => x.Title != "BlogEngine.NET").ToList();
+        foreach(var category in categories)
+            postCategoryIcon += "<img src=\"/custom/themes/standard/images/" + category.Title.ToLower() + ".png\" style=\"float:left;margin-right:8px;margin-top:6px; width:32px;height:32px;\" />";
+    }
 
 %>
 
@@ -40,22 +49,26 @@
 
 <article class="post-home post-home-<%=postImagePosition %>" id="post<%=Index %>">
     <div class="post-home-inner">
-        <% if  (postFirstImage.Length > 1 && !postFirstImage.EndsWith("defaultImg.jpg"))
-        { %>
-            <%=postImageLink %>
+        <% if (postFirstImage.Length > 1 && !postFirstImage.EndsWith("defaultImg.jpg"))
+            { %>
+        <%=postImageLink %>
         <%} %>
         <header class="post-header">
             <div class="post-meta">
-            <span class="post-author"><i class="fa fa-user"></i> <a href="<%=authorUrl %>"><%=authorName %></a></span>
-            <span class="post-date"><i class="fa fa-clock-o"></i> <%=postDate %></span>
-            <% if (postCategory.Length > 0)
-            {%><span class="post-category"><i class="fa fa-folder-open"></i> <%=postCategory %></span>
-            <% } %>
+                <span class="post-author"><i class="fa fa-user"></i><a href="<%=authorUrl %>"><%=authorName %></a></span>
+                <span class="post-date"><i class="fa fa-clock-o"></i><%=postDate %></span>
+                <% if (postCategory.Length > 0)
+                    {%><span class="post-category"><i class="fa fa-folder-open"></i> <%=postCategory %></span>
+                <% } %>
             </div>
-            <h2 class="post-title"><a class="post-link" href="<%=postUrl %>"><%=postTitle %></a></h2>
+            <h2 class="post-title">
+                <% =postCategoryIcon%>
+                <a class="post-link" href="<%=postUrl %>"><%=postTitle %></a>
+
+            </h2>
         </header>
         <p class="post-description">
-             <%=Post.Description %>...
+            <%=Post.Description %>...
         </p>
         <a href="<%=postUrl %>" class="btn btn-outline-dark post-more">read more</a>
     </div>
@@ -67,13 +80,13 @@
     {%>
 <article class="post-single <%=postClass %>" id="post<%=Index %>">
     <header class="post-header">
-        <h1 class="post-title"><%=postTitle %></h1>
+        <h1 class="post-title"><% =postCategoryIcon%> <%=postTitle %></h1>
         <div class="post-meta">
-        <span class="post-author"><i class="fa fa-user"></i> <a href="<%=authorUrl %>"><%=authorName %></a></span>
-        <span class="post-date"><i class="fa fa-clock-o"></i> <%=postDate %></span>
-        <% if (postCategory.Length > 0)
-        {%><span class="post-category"><i class="fa fa-folder-open"></i> <%=postCategory %></span>
-        <% } %>
+            <span class="post-author"><i class="fa fa-user"></i><a href="<%=authorUrl %>"><%=authorName %></a></span>
+            <span class="post-date"><i class="fa fa-clock-o"></i><%=postDate %></span>
+            <% if (postCategory.Length > 0)
+                {%><span class="post-category"><i class="fa fa-folder-open"></i> <%=postCategory %></span>
+            <% } %>
             <div class="dropdown post-share float-md-right">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i><%=Resources.labels.share %></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
