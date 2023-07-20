@@ -151,6 +151,7 @@
     <Content Include="App_Data\files\blogengine.png" />
     <Content Include="App_Data\files\logo.png" />
     <Content Include="App_Data\posts\f39c3289-e861-48f7-a4b7-edaaffe6f6dc.xml" />
+    <Content Include="Backup\empty.txt" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\blog\icon-left.svg" />
@@ -2443,7 +2444,6 @@
     <Folder Include="App_Data\datastore\extensions\" />
     <Folder Include="App_Data\packages\" />
     <Folder Include="App_Data\pages\" />
-    <Folder Include="Backup\" />
     <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
