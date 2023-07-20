@@ -187,6 +187,8 @@
         $("#mu-custom").addClass("active");
         window.location.href = lk + "?pkgId=" + id;
     }
+
+
     $scope.load();
     $(document).ready(function () {
         bindCommon();

@@ -68,6 +68,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting">
@@ -141,6 +142,7 @@
     <Content Include="admin\app\custom\widgets\widgetGallery.html" />
     <Content Include="admin\app\custom\widgets\widgetGalleryController.js" />
     <Content Include="admin\app\custom\widgets\widgetView.html" />
+    <Content Include="admin\BackupData.aspx" />
     <Content Include="admin\themes\standard\css\styles.css" />
     <Content Include="admin\themes\standard\img\logo-sidebar.png" />
     <Content Include="admin\themes\standard\img\profile.png" />
@@ -1872,6 +1874,13 @@
     <Compile Include="admin\admin.master.designer.cs">
       <DependentUpon>admin.master</DependentUpon>
     </Compile>
+    <Compile Include="admin\BackupData.aspx.cs">
+      <DependentUpon>BackupData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\BackupData.aspx.designer.cs">
+      <DependentUpon>BackupData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Extensions\Settings.ascx.cs">
       <DependentUpon>Settings.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2434,6 +2443,7 @@
     <Folder Include="App_Data\datastore\extensions\" />
     <Folder Include="App_Data\packages\" />
     <Folder Include="App_Data\pages\" />
+    <Folder Include="Backup\" />
     <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>

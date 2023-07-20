@@ -80,6 +80,8 @@
                         <li ng-if="vm.Comments.length == 0" class="list-group-item item-empty">{{lbl.empty}}</li>
                     </ul>
                 </div>
+
+
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div ng-if="qd.show" class="panel panel-default dashboard-quickdraft">
@@ -138,6 +140,18 @@
                         </li>
                     </ul>
                 </div>-->
+                <div class="panel panel-default dashboard-list">
+                    <div class="panel-heading">
+                        <div class="panel-title">Backup</div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span>
+                                <a href="/admin/BackupData.aspx" target="_blank" class="text-ellipsis">Backup all Data</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
                 <div data-ng-repeat="n in news" class="form-group">
                     <a href="{{n.OptionValue}}" target="_blank">
                         <img class="img-rounded" ng-src="https://blogengine.io/files/images/news/{{n.OptionName}}.png" style="max-width:100%;" alt="{{n.OptionName}}" />
