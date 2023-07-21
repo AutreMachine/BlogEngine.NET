@@ -1,138 +1,54 @@
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 12:38:15
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:30:47
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 12:58:12
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:45:31
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. l14-20020a1c790e000000b003fc3b03caa4sm4404117wme.0 - gsmtp
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 14:39:47
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:50:45
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 15:07:19
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:50:55
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 16:17:01
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:51:02
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. l19-20020a7bc453000000b003fbc681c8d1sm4123672wmi.36 - gsmtp
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 12/07/2023 16:26:37
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:51:05
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. a5-20020adfdd05000000b0031433d8af0dsm1546193wrm.18 - gsmtp
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:19:53
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:51:11
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:30:20
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 14:52:27
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:13
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 14:52:44
+Error sending email in SendMailMessage:  The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:16
-GET http://localhost:64079/api/dashboard/backupAll: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 14:54:17
+Error sending email in SendMailMessage:  Syntax error, command unrecognized. The server response was: Dovecot ready.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:18
-GET http://localhost:64079/api/dashboard/backupAll: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 15:02:02
+Error sending email in SendMailMessage:  Syntax error, command unrecognized. The server response was: Dovecot ready.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:20
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 15:02:12
+Error sending email in SendMailMessage:  The operation has timed out.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:20
-GET http://localhost:64079/api/dashboard/backupAll: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 15:02:57
+Error sending email in SendMailMessage:  The operation has timed out.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:29
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 15:03:51
+Error sending email in SendMailMessage:  The operation has timed out.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:34:31
-GET http://localhost:64079/api/dashboard/backupAll: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 15:04:14
+Error sending email in SendMailMessage:  The operation has timed out.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:44
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 15:05:04
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.90.134.20]>: Client host rejected: Access denied
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:45
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
+Date: 20/07/2023 17:09:24
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:46
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:47
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:47
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:47
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:48
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:56
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:37:57
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:38:24
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:38:30
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:38:36
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:38:37
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:43:29
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:43:37
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 18:47:28
-GET http://localhost:64079/api/dashboard: Multiple actions were found that match the request: 
-Get on type DashboardController
-BackupAll on type DashboardController
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 20/07/2023 19:05:38
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 20/07/2023 17:11:46
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Blazor Hosted et problème de CurrentCulture</title>
+  <description>Sous ce titre un peu cryptique, un probl&amp;egrave;me qui nous est arriv&amp;eacute; r&amp;eacute;cemment :
+Nou</description>
+  <content>&lt;p&gt;Sous ce titre un peu cryptique, un probl&amp;egrave;me qui nous est arriv&amp;eacute; r&amp;eacute;cemment :&lt;/p&gt;
+&lt;p&gt;Nous d&amp;eacute;veloppons une application en Blazor Hosted (une app cliente WASM + une app serveur ASP.NET Core) r&amp;eacute;cup&amp;eacute;rant la&amp;nbsp;&lt;strong&gt;Culture&amp;nbsp;&lt;/strong&gt;- et la&amp;nbsp;&lt;strong&gt;Currency&amp;nbsp;&lt;/strong&gt;- de l'utilisateur.&lt;/p&gt;
+&lt;p&gt;L'utilisateur se connecte au site Web, on r&amp;eacute;cup&amp;egrave;re ces infos via :&lt;/p&gt;
+&lt;p&gt;H&amp;eacute;las, probl&amp;egrave;me r&amp;eacute;current : &amp;ccedil;a fonctionne correctement en DEBUG local, mais lorsqu'on publie sur Azure, on r&amp;eacute;cup&amp;egrave;re invariablement :&lt;/p&gt;
+&lt;ul data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span style="color: #ff0000;" data-keep-original-tag="false" data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;En-us&lt;/span&gt;&lt;/strong&gt;&amp;nbsp;pour la&amp;nbsp;&lt;strong&gt;CurrentCulture&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span style="color: #ff0000;" data-keep-original-tag="false" data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;USD&amp;nbsp;&lt;/span&gt;&lt;/strong&gt;pour la&amp;nbsp;&lt;strong&gt;Currency&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;M&amp;ecirc;me si la r&amp;eacute;gion Azure n'est pas aux Etats-Unis.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;La solution ?&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Pour utiliser la localisation (et la Culture) dans Blazor, en fait, il faut le d&amp;eacute;clarer...&lt;/div&gt;
+&lt;div&gt;Ainsi, dans le projet Server, &amp;eacute;ditez le fichier Program.cs et ajoutez la ligne :&lt;/div&gt;
+&lt;pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"&gt;// Localization
+builder.Services.AddLocalization();&lt;/pre&gt;
+&lt;pre&gt;Pour &amp;ecirc;tre sur, &amp;eacute;ditez le fichier .csproj et ajoutez la section suivante :&lt;/pre&gt;
+&lt;pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"&gt;&amp;lt;PropertyGroup&amp;gt;
+  &amp;lt;InvariantGlobalization&amp;gt;false&amp;lt;/InvariantGlobalization&amp;gt;
+&amp;lt;/PropertyGroup&amp;gt;&lt;/pre&gt;
+&lt;pre&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;div&gt;Ceinture et bretelles.&lt;/div&gt;
+&lt;div&gt;A partir de l&amp;agrave;, vous devriez bien r&amp;eacute;cup&amp;eacute;rer les param&amp;egrave;tres locaux corrects depuis le poste de l'utilisateur.&lt;/div&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2023-07-20 16:43:00</pubDate>
+  <lastModified>2023-07-20 14:44:42</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>blazor-hosted-et-probleme-de-currentculture</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>1cfe78e4-6ac5-43c8-b8ed-5d89c1925faa</category>
+  </categories>
+  <notifications />
+</post>

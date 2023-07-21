@@ -17,7 +17,8 @@ namespace BlogEngine.NET.admin
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var inputDirectory = Server.MapPath("~") + "\\App_Data";
-                var fileName = Path.Combine(Server.MapPath("~"), "Backup\\full.zip");
+                var zipName = "Backup\\full-" + Guid.NewGuid().ToString() + ".zip";
+                var fileName = Path.Combine(Server.MapPath("~"), zipName);
                 // Deletes the old zip
                 try
                 {
@@ -28,7 +29,7 @@ namespace BlogEngine.NET.admin
                 // Starts the backup
                 System.IO.Compression.ZipFile.CreateFromDirectory(inputDirectory, fileName);
 
-                Response.Redirect("/Backup/full.zip");
+                Response.Redirect("/" + zipName);
             }
             else
                 throw new UnauthorizedAccessException();

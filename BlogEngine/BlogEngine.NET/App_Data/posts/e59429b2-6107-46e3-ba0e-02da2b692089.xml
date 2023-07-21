@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Unity : Gérer le cycle de vie avec Action</title>
+  <description>&amp;nbsp;
+Unity est un outil extraordinaire d&amp;egrave;s lors qu'il s'agit de composer des espaces en 3d,</description>
+  <content>&lt;div class="separator" data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;Unity est un outil extraordinaire d&amp;egrave;s lors qu'il s'agit de composer des espaces en 3d, de cr&amp;eacute;er des plateformes de jeux 2D, d'importer des personnages et leurs animations.&lt;/div&gt;
+&lt;p&gt;En revanche, certaines t&amp;acirc;ches plus "standard" n&amp;eacute;cessitent, plus ou moins, de r&amp;eacute;inventer la roue &amp;agrave; chaque fois.&lt;/p&gt;
+&lt;p&gt;T&amp;eacute;moin l'&amp;eacute;tat du jeu, le&amp;nbsp;&lt;strong&gt;Gamestate&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Les jeux vid&amp;eacute;o sont la plupart du temps des machines &amp;agrave; &amp;eacute;tat.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Elles d&amp;eacute;marrent sur la page d'introduction - appelons l'&amp;eacute;tat&amp;nbsp;&lt;strong&gt;Intro&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Puis on lance une partie et on choisit son personnage - appelons l'&amp;eacute;tat&amp;nbsp;&lt;strong&gt;ChooseCharacter&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;On d&amp;eacute;marre le jeu : &amp;eacute;tat&amp;nbsp;&lt;strong&gt;Playing&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;On perd une vie , une animation nous rappelle que la fin se rapproche : &amp;eacute;tat&amp;nbsp;&lt;strong&gt;LosingLife&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;On rejoue, on perd, on finit : &amp;eacute;tat&amp;nbsp;&lt;strong&gt;GameWon&amp;nbsp;&lt;/strong&gt;, ou &amp;eacute;tat&amp;nbsp;&lt;strong&gt;GameLost&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Puis retour &amp;agrave; l'intro.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tr&amp;egrave;s classique.&lt;/p&gt;
+&lt;p&gt;***&lt;/p&gt;
+&lt;p&gt;En g&amp;eacute;n&amp;eacute;ral, dans Unity, on va rapidement cr&amp;eacute;er un script GameManager.cs qui va g&amp;eacute;rer les passages d'un &amp;eacute;tat &amp;agrave; l'autre. On aura une enum du genre :&amp;nbsp;&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;public enum GameState {
+Intro,
+ChooseCharacter,
+Playing,
+LosingLife,
+GameWon,
+GameLost
+}&lt;/pre&gt;
+&lt;pre&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;p&gt;Si vous avez d&amp;eacute;j&amp;agrave; &amp;eacute;t&amp;eacute; confront&amp;eacute; au probl&amp;egrave;me, vous avez certainement du cr&amp;eacute;er un certain nombre d'UI pour repr&amp;eacute;senter les diff&amp;eacute;rents &amp;eacute;tats de votre jeu :&lt;/p&gt;
+&lt;ul data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;li&gt;un &amp;eacute;cran d'introduction, avec le titre&lt;/li&gt;
+&lt;li&gt;un &amp;eacute;cran de choix de personnage&lt;/li&gt;
+&lt;li&gt;l'&amp;eacute;cran de jeu&lt;/li&gt;
+&lt;li&gt;l'&amp;eacute;cran pr&amp;eacute;sentant la perte d'une vie&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;Mais comment afficher ces &amp;eacute;crans ?&lt;/div&gt;
+&lt;div&gt;Comment g&amp;eacute;rer le passage fluide d'un &amp;eacute;cran &amp;agrave; l'autre ?&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Chez moi, c'est le script GameManager qui s'en occupe. C'est un moyen centralis&amp;eacute; de g&amp;eacute;rer le workflow.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Le probl&amp;egrave;me, c'est que &amp;ccedil;a implique d'ajouter les r&amp;eacute;f&amp;eacute;rences de toutes les pages &amp;agrave; GameManager. GameManager va se mettre &amp;agrave; afficher / ou &amp;agrave; masquer les autres &amp;eacute;crans en fonction du&amp;nbsp;&lt;strong&gt;GameState&lt;/strong&gt;.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;GameManager devient du coup vite complexe, et se met &amp;agrave; g&amp;eacute;rer le fonctionnement d'autres objets :&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;&lt;strong&gt;&lt;span style="color: #ff0000;" data-keep-original-tag="false" data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;Mauvaise s&amp;eacute;paration des responsabilit&amp;eacute;s !!&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;***&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;R&amp;eacute;cemment, j'ai chang&amp;eacute; de fa&amp;ccedil;on de faire, en utilisant des&amp;nbsp;&lt;strong&gt;Action&amp;nbsp;&lt;/strong&gt;pour g&amp;eacute;rer la transition entre les diff&amp;eacute;rents &amp;eacute;tats, au lieu d'avoir GameManager qui modifie les affichages.&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;Le principe est simple :&lt;/div&gt;
+&lt;div data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;ul data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;li&gt;un objet&amp;nbsp;&lt;strong&gt;MonoBehavior&amp;nbsp;&lt;/strong&gt;susceptible d'influer sur d'autres objets ajoute un objet&amp;nbsp;&lt;strong&gt;Action&amp;nbsp;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;public class GameManager : MonoBehaviour
+{
+    // events
+    public static Action&amp;lt;GameState&amp;gt; StateHasChanged;
+
+    public GameState? State { get; set; }
+ 
+    ...
+
+    /// 
+    /// Switches to next state
+    /// 
+    public void switchToNextState(GameState newState)
+    {
+        State = newState;
+        // Send message to observers
+        StateHasChanged?.Invoke(newState);
+
+        ...
+    }
+    ...&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;nbsp;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ici, la fonction&amp;nbsp;&lt;strong&gt;switchToNextState&amp;nbsp;&lt;/strong&gt;g&amp;egrave;re le changement d'&amp;eacute;tat, lorsqu'elle est appel&amp;eacute;e, elle publie le changement d'&amp;eacute;tat &amp;agrave; tous les objets qui observent.&lt;/p&gt;
+&lt;ul data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;li&gt;des objets qui observent l'&lt;strong&gt;Action&lt;/strong&gt;&amp;nbsp;quand elle est invoqu&amp;eacute;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;public class GameOver : MonoBehaviour
+{
+    private void Awake()
+    {
+        GameManager.StateHasChanged += stateHasChanged;
+
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+		// Masque tous les fils
+        CommonTools.HideChildren(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void stateHasChanged(GameState newState)
+    {
+        if (newState == GameState.GameOver)
+        {
+        	// Affiche tous les fils
+            CommonTools.ShowChildren(gameObject);
+        }
+        else
+        {
+        	// Masque tous les fils
+            CommonTools.HideChildren(gameObject);
+
+        }
+    }
+    ...&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;nbsp;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ici, l'objet GameOver qui g&amp;egrave;re la page, attend l'event&amp;nbsp;&lt;strong&gt;StateHasChanged&amp;nbsp;&lt;/strong&gt;et r&amp;eacute;agit quand il passe dans l'&amp;eacute;tat GameOver.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remarque&amp;nbsp;&lt;/strong&gt;: Vous noterez les m&amp;eacute;thodes qui affichent / masquent les contr&amp;ocirc;les enfants.&lt;/p&gt;
+&lt;p&gt;En effet, il&amp;nbsp;&lt;strong&gt;n'est pas possible&lt;/strong&gt;&amp;nbsp;de d&amp;eacute;sactiver ( .&lt;em&gt;setActive(false)&lt;/em&gt;) l'objet GameOver, sinon il ne pourra plus recevoir de changement d'&amp;eacute;tat et ne fonctionnera plus !! Il faut donc afficher / effacer les enfants uniquement :&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;/// 
+/// Tools used in gameObjects
+/// 
+public class CommonTools : MonoBehaviour
+{
+    public static void HideChildren(GameObject go)
+    {
+        // Hide children
+        for (int i = 0; i &amp;lt; go.transform.childCount; i++)
+        {
+            var child = go.transform.GetChild(i);
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    public static void ShowChildren(GameObject go)
+    {
+        // Show
+        for (int i = 0; i &amp;lt; go.transform.childCount; i++)
+        {
+            var child = go.transform.GetChild(i);
+            child.gameObject.SetActive(true);
+        }
+    }
+    ...&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;nbsp;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;C'est la seule petite contrainte par rapport au fait de d&amp;eacute;sactiver tout l'objet GameOver.&lt;/p&gt;
+&lt;p&gt;En revanche, les gains sont&amp;nbsp;&lt;strong&gt;tr&amp;egrave;s&amp;nbsp;&lt;/strong&gt;int&amp;eacute;ressants :&amp;nbsp;&lt;/p&gt;
+&lt;ul data-original-attrs="{&amp;quot;style&amp;quot;:&amp;quot;&amp;quot;}"&gt;
+&lt;li&gt;Plus aucune r&amp;eacute;f&amp;eacute;rence &amp;agrave; GameOver dans GameManager : les responsabilit&amp;eacute;s sont bien s&amp;eacute;par&amp;eacute;es, pas de risque de confusion&lt;/li&gt;
+&lt;li&gt;Il est facile d'ajouter un &amp;eacute;tat interm&amp;eacute;diaire : on ajoute un GameState, une page, sans besoin de retoucher GameManager&lt;/li&gt;
+&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2023-07-12 14:51:00</pubDate>
+  <lastModified>2023-07-12 13:03:58</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>unity-gerer-le-cycle-de-vie-avec-action</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>1bef2b78-8eb2-4dae-a8b1-9d5bb14ec182</category>
+  </categories>
+  <notifications />
+</post>

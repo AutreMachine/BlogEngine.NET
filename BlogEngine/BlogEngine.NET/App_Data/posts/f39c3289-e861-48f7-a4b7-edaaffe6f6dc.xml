@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <post>
   <author>Admin</author>
-  <title>Welcome to BlogEngine.NET</title>
-  <description>If you see this post it means that BlogEngine.NET is running and the hard part of creating your own blog is done. There is only a few things left to do.</description>
+  <title>Bienvenue sur Autre Machine !</title>
+  <description>Bienvenue sur Autre Machine !</description>
   <content>&lt;p&gt;&lt;img src="/image.axd?picture=/blogengine.png" alt="" /&gt;&lt;/p&gt;
 &lt;p&gt;If you see this post it means that BlogEngine.NET is running and the hard part of creating your own blog is done. There is only a few things left to do.&lt;/p&gt;
 &lt;div class="row"&gt;
@@ -30,7 +30,7 @@
   <lastModified>2018-05-21 22:48:52</lastModified>
   <raters>0</raters>
   <rating>0</rating>
-  <slug>welcome-to-blogengine-net</slug>
+  <slug>welcome-to-autre-machine</slug>
   <tags>
     <tag>Blogging</tag>
     <tag>welcome</tag>

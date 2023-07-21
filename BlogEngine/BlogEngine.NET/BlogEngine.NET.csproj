@@ -142,6 +142,7 @@
     <Content Include="admin\app\custom\widgets\widgetGallery.html" />
     <Content Include="admin\app\custom\widgets\widgetGalleryController.js" />
     <Content Include="admin\app\custom\widgets\widgetView.html" />
+    <Content Include="admin\ImportBackupData.aspx" />
     <Content Include="admin\BackupData.aspx" />
     <Content Include="admin\themes\standard\css\styles.css" />
     <Content Include="admin\themes\standard\img\logo-sidebar.png" />
@@ -576,6 +577,7 @@
     <Content Include="Custom\Themes\Standard\CommentView.ascx" />
     <Content Include="Custom\Themes\Standard\images\blazor.png" />
     <Content Include="Custom\Themes\Standard\images\defaultImg.jpg" />
+    <Content Include="Custom\Themes\Standard\images\speedblazing2.png" />
     <Content Include="Custom\Themes\Standard\images\unity.png" />
     <Content Include="Custom\Themes\Standard\newsletter.html" />
     <Content Include="Custom\Themes\Standard\PostNavigation.ascx" />
@@ -776,7 +778,7 @@
     <Content Include="Custom\Themes\Standard-2017\src\fonts\fontawesome-webfont.woff2" />
     <Content Include="Custom\Themes\Standard-2017\src\fonts\FontAwesome.otf" />
     <Content Include="Custom\Themes\Standard\page.master" />
-    <None Include="Properties\PublishProfiles\blogengine-app - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\blogger-app - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
@@ -1874,6 +1876,13 @@
     </Compile>
     <Compile Include="admin\admin.master.designer.cs">
       <DependentUpon>admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ImportBackupData.aspx.cs">
+      <DependentUpon>ImportBackupData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ImportBackupData.aspx.designer.cs">
+      <DependentUpon>ImportBackupData.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\BackupData.aspx.cs">
       <DependentUpon>BackupData.aspx</DependentUpon>

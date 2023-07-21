@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Blazor + API + custom domain name = 401 ?</title>
+  <description>Nous allons parler de la mise en production d'une application Blazor Asp.Net Hosted (donc une applic</description>
+  <content>&lt;p&gt;Nous allons parler de la mise en production d'une application Blazor Asp.Net Hosted (donc une application client&amp;nbsp; WASM + une application serveur ASP.NET) sur Azure.&lt;/p&gt;
+&lt;p&gt;L'application web Blazor se connecte &amp;agrave; une API host&amp;eacute;e elle aussi sur Azure (via un Private Network, on en reparlera danbs un billet ult&amp;eacute;rieur).&lt;/p&gt;
+&lt;p&gt;Par d&amp;eacute;faut, &amp;agrave; la mise en production, l'App Service a une URL du type :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://monsite.azurewebsites.net&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Elle se connecte &amp;agrave; l'API accessible via :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://monsite-api.azurewebsites.net&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;nbsp;Tout va bien, une fois publi&amp;eacute;e, l'application se comporte normalement et acc&amp;egrave;de bien &amp;agrave; l'API.&lt;/p&gt;
+&lt;p&gt;Tout va bien.&lt;/p&gt;
+&lt;p&gt;Jusqu'&amp;agrave; ce que... Il nous prenne l'envie d'associer un nom de domaine &amp;agrave; l'application.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://monnomdedomaine.xyz&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Et l&amp;agrave;... C'est l'accident. L'application Blazor web qui tournait parfaitement dans un navigateur ne fonctionne plus : une litanie d'erreurs 401.3 dans l'inspecteur.&lt;/p&gt;
+&lt;p&gt;Impossible d'acc&amp;eacute;der &amp;agrave; l'API &amp;agrave; partir du web.&lt;/p&gt;
+&lt;p&gt;En fait, tout simplement, l'acc&amp;egrave;s &amp;agrave; l'API est refus&amp;eacute; car le nom de domaine appelant n'est plus le m&amp;ecirc;me que le nom en&amp;nbsp;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://monsite.azurewebsites.net/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;La solution ?&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Il faut d&amp;eacute;finir la variable IssuerUri dans Program.cs (du projet Server) en sp&amp;eacute;cifiant le nouveau nom de domaine.&lt;/p&gt;
+&lt;pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"&gt;builder.Services.AddIdentityServer(options =&amp;gt;
+{
+    var issuerUri = builder.Configuration.GetValue&amp;lt;string?&amp;gt;("IssuerUri");
+    if (issuerUri != null)
+        options.IssuerUri = issuerUri;
+})
+    .AddApiAuthorization&amp;lt;ApplicationUser, ApplicationDbContext&amp;gt;();&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&lt;br /&gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ici, l'url sp&amp;eacute;cif&amp;eacute;e par IssuerUri a &amp;eacute;t&amp;eacute; mise dans le fichier appsettings.json - on pourrait &amp;eacute;crire directement :&lt;/p&gt;
+&lt;pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"&gt;builder.Services.AddIdentityServer(options =&amp;gt;
+{
+    options.IssuerUri = "https://monsite.azurewebsites.net";
+})
+    .AddApiAuthorization&amp;lt;ApplicationUser, ApplicationDbContext&amp;gt;();&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&lt;br /&gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;mais il y a un b&amp;eacute;mol : le IssuerUri ne fonctionne pas en&amp;nbsp;&lt;strong&gt;Debug&amp;nbsp;&lt;/strong&gt;!!! Uniquement en production.&lt;/p&gt;
+&lt;p&gt;Nous avons donc laiss&amp;eacute; la cl&amp;eacute; vide / null dans le appsettings.Development.json et mis la bonne url - "https://monsite.azurewebsites.net" dans le appsettings.json.&lt;/p&gt;
+&lt;p&gt;Avec &amp;ccedil;a, vous ne devriez plus avoir de 401 en production.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2023-07-20 16:31:00</pubDate>
+  <lastModified>2023-07-20 14:34:03</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>blazor-api-custom-domain-name-401</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>1cfe78e4-6ac5-43c8-b8ed-5d89c1925faa</category>
+  </categories>
+  <notifications />
+</post>

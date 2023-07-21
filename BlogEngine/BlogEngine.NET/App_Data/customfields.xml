@@ -13,7 +13,6 @@
     <item customtype="THEME" objectid="Standard-2017" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Github Account" value="" attribute="" />
     <item customtype="THEME" objectid="Standard-2017" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Pinterest Account" value="" attribute="" />
     <item customtype="THEME" objectid="Standard-2017" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Home Alert Box (true or false?)" value="true" attribute="" />
-    <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Logo" value="/Custom/Themes/Standard/src/img/logo.png" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Facebook Account" value="#" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Twitter Account" value="#" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Google Plus Account" value="#" attribute="" />
@@ -22,6 +21,7 @@
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Youtube Account" value="" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Pinterest Account" value="" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Github Account" value="" attribute="" />
-    <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Publisher Logo" value="http://exampleblog.com/logo.png" attribute="" />
+    <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Publisher Logo" value="Custom/Themes/Standard/src/img/logo.png" attribute="" />
     <item customtype="THEME" objectid="Standard" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="Post Thumbnail position" value="top" attribute="" />
+    <item customtype="POST" objectid="e59429b2-6107-46e3-ba0e-02da2b692089" blogid="96d5b379-7e1d-4dac-a6ba-1e50db561b04" key="icon" value="unity.png" attribute="" />
 </CustomFields>
