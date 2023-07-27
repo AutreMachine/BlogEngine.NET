@@ -153,6 +153,9 @@
     <Content Include="App_Data\files\logo.png" />
     <Content Include="App_Data\posts\f39c3289-e861-48f7-a4b7-edaaffe6f6dc.xml" />
     <Content Include="Backup\empty.txt" />
+    <Content Include="app-ads.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\blog\icon-left.svg" />
