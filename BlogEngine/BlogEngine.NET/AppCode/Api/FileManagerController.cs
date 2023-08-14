@@ -42,7 +42,8 @@ public class FileManagerController : ApiController
                 if (item.IsChecked)
                 {
                     if(item.FileType == FileType.File || item.FileType == FileType.Image)
-                        BlogService.DeleteFile(Extensions.SanitizePath(item.FullPath));
+                        BlogService.DeleteFile(Extensions.SanitizePathWithoutDot(item.FullPath));
+                        //BlogService.DeleteFile(Extensions.SanitizePath(item.FullPath));
 
                     if (item.FileType == FileType.Directory)
                         BlogService.DeleteDirectory(Extensions.SanitizePath(item.FullPath));

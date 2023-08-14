@@ -114,5 +114,28 @@
 
             return str;
         }
+
+        /// <summary>
+        /// Warning !! Sanitize path is used for Delete - but Sanitize removes . -> file can't be deleted
+        /// We created another version - keeping .
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public static string SanitizePathWithoutDot(this string str, string root = "")
+        {
+            if (str.Contains(".."))
+                return "";
+
+            if (str.StartsWith("~/") && !string.IsNullOrEmpty(root) && !str.StartsWith(root))
+                return "";
+
+            str = str.Replace("\\", "").Replace("%2F", "");
+
+            if (str.Contains("//"))
+                return "";
+
+            return str;
+        }
     }
 }
