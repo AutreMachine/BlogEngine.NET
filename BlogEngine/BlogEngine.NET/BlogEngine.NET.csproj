@@ -580,6 +580,7 @@
     <Content Include="Custom\Themes\Standard\CommentView.ascx" />
     <Content Include="Custom\Themes\Standard\images\blazor.png" />
     <Content Include="Custom\Themes\Standard\images\defaultImg.jpg" />
+    <Content Include="Custom\Themes\Standard\images\scribla.png" />
     <Content Include="Custom\Themes\Standard\images\speedblazing2.png" />
     <Content Include="Custom\Themes\Standard\images\unity.png" />
     <Content Include="Custom\Themes\Standard\newsletter.html" />
