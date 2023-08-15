@@ -38,16 +38,48 @@
         <!-- START HEADER -->
         <header class="blog-header container">
             <nav class="d-flex">
+
                 <h1 class="blog-logo my-auto">
                     <a href="<%=Utils.AbsoluteWebRoot %>">
                         <%=BlogSettings.Instance.Name %>
+
+
+                        <%if (Utils.GetDomainExtension() == "fr")
+                            {%>
+                    &nbsp;<img src="/custom/themes/standard/images/france.png" width="20" height="20" />
+                        <%} %>
+                        <%if (Utils.GetDomainExtension() == "com")
+                            {%>
+                        <img src="/custom/themes/standard/images/united-kingdom.png" width="20" height="20" />
+                        <%} %>
                     </a>
                 </h1>
-                <button class="blog-nav-toggle hamburger ml-auto my-auto color-dark hamburger--squeeze" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
+
+                <span class="ml-auto my-auto ">
+                    <%if (Utils.GetDomainExtension() == "fr")
+                        {%>
+                    <span class="link-version">
+                        <a class="my-auto" href='<%=Utils.GetDomainWithAnotherExtension("com") %>'>
+                            Version 
+                            <img src="/custom/themes/standard/images/united-kingdom.png" width="20" height="20" />
+                        </a>
                     </span>
-                </button>
+                    <%} %>
+                     <%if (Utils.GetDomainExtension() == "com")
+                        {%>
+                    <span class="link-version">
+                        <a class="my-auto" href='<%=Utils.GetDomainWithAnotherExtension("fr") %>'>
+                            Version 
+                            <img src="/custom/themes/standard/images/france.png" width="20" height="20" />
+                        </a>
+                    </span>
+                    <%} %>
+                    <button class="my-auto blog-nav-toggle hamburger color-dark hamburger--squeeze" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </span>
             </nav>
         </header>
         <!-- END HEADER -->
@@ -65,20 +97,20 @@
                     <li><a href="<%=Utils.AbsoluteWebRoot %>"><%=Resources.labels.home %></a></li>
                     <%foreach (BlogEngine.Core.Page parentPage in BlogEngine.Core.Page.Pages.Where(p => !p.HasParentPage && p.IsPublished && p.ShowInList))
                         { %><li>
-                <a href="<%=parentPage.RelativeLink %>"><%=parentPage.Title%></a>
-                <%if (parentPage.HasChildPages)
-                    { %>
-                <ul>
-                    <%foreach (BlogEngine.Core.Page childPage in BlogEngine.Core.Page.Pages.Where(p => p.Parent == parentPage.Id && p.IsPublished && p.ShowInList))
-                        { %>
-                    <li>
-                        <a href="<%=childPage.RelativeLink %>"><%=childPage.Title %></a>
-                    </li>
-                    <% } %>
-                </ul>
-                <% } %>
+                            <a href="<%=parentPage.RelativeLink %>"><%=parentPage.Title%></a>
+                            <%if (parentPage.HasChildPages)
+                                { %>
+                            <ul>
+                                <%foreach (BlogEngine.Core.Page childPage in BlogEngine.Core.Page.Pages.Where(p => p.Parent == parentPage.Id && p.IsPublished && p.ShowInList))
+                                    { %>
+                                <li>
+                                    <a href="<%=childPage.RelativeLink %>"><%=childPage.Title %></a>
+                                </li>
+                                <% } %>
+                            </ul>
+                            <% } %>
 
-            </li>
+                        </li>
                     <% } %>
                     <li><a href="<%=Utils.AbsoluteWebRoot %>archive"><%=Resources.labels.archive %></a></li>
                     <li><a href="<%=Utils.AbsoluteWebRoot %>contact"><%=Resources.labels.contact %></a></li>
@@ -107,7 +139,8 @@
                 </ul>
                 <div class="blog-copyright mx-auto mt-3 text-center">
                     <span class="d-block">&copy; <%=DateTime.Now.Year %></span>
-                    <span>Designed by <a href="http://blogengine.io/themes/" rel="nofollow" target="_blank">BlogEngine</a></span>
+                    <span>Designed by <a href="http://blogengine.io/themes/" rel="nofollow" target="_blank">BlogEngine</a></span><br />
+                    <span><a href="https://www.flaticon.com/free-icons/uk-flag" title="flag icons">Flag icons created by Freepik - Flaticon</a></span>
                 </div>
             </footer>
         </div>

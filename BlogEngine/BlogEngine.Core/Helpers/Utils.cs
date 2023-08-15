@@ -117,6 +117,39 @@
         }
 
         /// <summary>
+        /// Get the extension of the current domain (if any)
+        /// </summary>
+        /// <returns></returns>
+        public static string GetDomainExtension()
+        {
+            var path = AbsoluteWebRoot.Host;
+            if (path.IndexOf(".") >= 0)
+                return path.Substring(path.LastIndexOf(".") + 1).ToLower();
+
+            return "";
+        }
+
+        /// <summary>
+        /// Returns a base url with another extension (for language management)
+        /// </summary>
+        /// <param name="extension"></param>
+        /// <returns></returns>
+        public static string GetDomainWithAnotherExtension(string extension)
+        {
+            var path = AbsoluteWebRoot.Scheme + "://" + AbsoluteWebRoot.Host;
+            if (!AbsoluteWebRoot.IsDefaultPort)
+                path += ":" + AbsoluteWebRoot.Port;
+
+           if (path.IndexOf(".") >= 0)
+            {
+                var newPath = path.Substring(0, path.LastIndexOf(".")) + "." + extension;
+                return newPath;
+            }
+
+            return path;
+        }
+
+        /// <summary>
         ///     Gets the relative URL of the blog feed. If a Feedburner username
         ///     is entered in the admin settings page, it will return the 
         ///     absolute Feedburner URL to the feed.

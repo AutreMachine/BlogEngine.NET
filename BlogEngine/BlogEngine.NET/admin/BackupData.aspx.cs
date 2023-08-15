@@ -1,4 +1,5 @@
-﻿using ICSharpCode.SharpZipLib.Zip;
+﻿using BlogEngine.Core;
+using ICSharpCode.SharpZipLib.Zip;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +18,11 @@ namespace BlogEngine.NET.admin
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var inputDirectory = Server.MapPath("~") + "\\App_Data";
-                var zipName = "Backup\\full-" + Guid.NewGuid().ToString() + ".zip";
+
+                // Get site name
+                var siteRoot = Utils.AbsoluteWebRoot.Host;
+                // Extract only name
+                var zipName = "Backup\\" + siteRoot + "-" + Guid.NewGuid().ToString() + ".zip";
                 var fileName = Path.Combine(Server.MapPath("~"), zipName);
                 // Deletes the old zip
                 try

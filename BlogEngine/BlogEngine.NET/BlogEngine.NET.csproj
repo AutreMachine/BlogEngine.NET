@@ -580,8 +580,10 @@
     <Content Include="Custom\Themes\Standard\CommentView.ascx" />
     <Content Include="Custom\Themes\Standard\images\blazor.png" />
     <Content Include="Custom\Themes\Standard\images\defaultImg.jpg" />
+    <Content Include="Custom\Themes\Standard\images\france.png" />
     <Content Include="Custom\Themes\Standard\images\scribla.png" />
     <Content Include="Custom\Themes\Standard\images\speedblazing2.png" />
+    <Content Include="Custom\Themes\Standard\images\united-kingdom.png" />
     <Content Include="Custom\Themes\Standard\images\unity.png" />
     <Content Include="Custom\Themes\Standard\newsletter.html" />
     <Content Include="Custom\Themes\Standard\PostNavigation.ascx" />
@@ -783,6 +785,7 @@
     <Content Include="Custom\Themes\Standard-2017\src\fonts\FontAwesome.otf" />
     <Content Include="Custom\Themes\Standard\page.master" />
     <None Include="Properties\PublishProfiles\blogger-app - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\blogger-fr-app - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
