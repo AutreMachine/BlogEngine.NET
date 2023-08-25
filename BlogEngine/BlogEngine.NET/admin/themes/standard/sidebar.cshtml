@@ -19,6 +19,31 @@
         <div class="nav-user-img"><img src="@src" /></div>
         <div class="nav-user-name text-ellipsis">@displayName</div>
     </div>
+    <div style="padding-left:15px">
+        @{ var urlImg = "";
+            var lang = "";
+            if (Utils.GetDomainExtension() == "fr")
+            {
+                urlImg = "/custom/themes/standard/images/france.png";
+                lang = "Français";
+
+            }
+            if (Utils.GetDomainExtension() == "com")
+            {
+                urlImg = "/custom/themes/standard/images/united-kingdom.png";
+                lang = "English";
+            }
+            if (urlImg != "" && lang != "")
+            {
+                <text>
+                    <div style="float:left;padding-right:10px"><img src="@urlImg" width="20" height="20" /></div>
+                    <div style="margin-left:10px">@lang</div>
+
+                </text>
+
+            }
+        }
+    </div>
     <ul class="nav-user-actions clearfix">
         <li title="@Resources.labels.logoff"><a href="{{SiteVars.RelativeWebRoot}}Account/login.aspx?logoff"><i class="fa fa-power-off"></i></a></li>
         <li title="@Resources.labels.changePassword"><a href="{{SiteVars.RelativeWebRoot}}Account/change-password.aspx" target="_blank"><i class="fa fa-key"></i></a></li>
@@ -37,14 +62,14 @@
             <ul class="sub-nav-sidebar">
                 <li id="mu-posts" data-ng-class="{ active: isActive('/content/posts')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/posts">@Resources.labels.posts</a></li>
                 @if (BlogSettings.Instance.CommentProvider == BlogSettings.CommentsBy.BlogEngine)
-            {
+                {
                     <li id="mu-comments" data-ng-class="{ active: isActive('/content/comments')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/comments">@Resources.labels.comments</a></li>
                 }
                 <li id="mu-pages" data-ng-class="{ active: isActive('/content/pages')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/pages">@Resources.labels.pages</a></li>
                 <li data-ng-class="{ active: isActive('/content/categories')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/categories">@Resources.labels.categories</a></li>
                 <li data-ng-class="{ active: isActive('/content/tags')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/tags">@Resources.labels.tags</a></li>
                 @if (Blog.CurrentInstance.IsPrimary && Security.IsAdministrator && BlogConfig.UsageScenario == "multiblogs")
-            {
+                {
                     <li data-ng-class="{ active: isActive('/content/blogs')}"><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/blogs">@Resources.labels.blogs</a></li>
                 }
             </ul>
@@ -67,11 +92,11 @@
                 <ul class="sub-nav-sidebar">
                     <li data-ng-class="{ active: isActive('/security/profile')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/security/profile">@Resources.labels.profile</a></li>
                     @if (Security.IsAuthorizedTo(Rights.ViewRoles))
-                {
+                    {
                         <li data-ng-class="{ active: isActive('/security/roles')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/security/roles">@Resources.labels.roles</a></li>
                     }
                     @if (Security.IsAuthorizedTo(Rights.EditOtherUsers))
-                {
+                    {
                         <li data-ng-class="{ active: isActive('/security/users')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/security/users">@Resources.labels.users</a></li>
                     }
                 </ul>
@@ -88,7 +113,7 @@
                     <li data-ng-class="{ active: isActive('/settings/comments')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/settings/comments">@Resources.labels.comments</a></li>
                     <li data-ng-class="{ active: isActive('/settings/controls')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/settings/controls">@Resources.labels.controls</a></li>
                     @if (BlogConfig.UsageScenario != "singleblog" && Blog.CurrentInstance.IsPrimary)
-                {
+                    {
                         <li data-ng-class="{ active: isActive('/settings/advanced')}"><a class="ng-binding" href="{{SiteVars.RelativeWebRoot}}admin/#/settings/advanced">@Resources.labels.advanced</a></li>
                     }
                 </ul>
