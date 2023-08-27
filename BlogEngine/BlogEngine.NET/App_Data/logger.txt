@@ -67,3 +67,21 @@ BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'http
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 Date: 25/08/2023 10:20:33
 BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:25:27
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:37:41
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:37:56
+PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:38:07
+PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:38:46
+PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 27/08/2023 11:44:55
+BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.

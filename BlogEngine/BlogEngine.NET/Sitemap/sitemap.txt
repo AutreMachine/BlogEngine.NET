@@ -1,0 +1,5 @@
+http://localhost/post/test
+http://localhost/post/blazor-hosted-et-probleme-de-currentculture
+http://localhost/post/blazor-api-custom-domain-name-401
+http://localhost/post/unity-gerer-le-cycle-de-vie-avec-action
+http://localhost/post/welcome-to-autre-machine

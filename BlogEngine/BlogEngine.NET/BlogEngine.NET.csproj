@@ -1629,6 +1629,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Sitemap\Readme.txt" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>

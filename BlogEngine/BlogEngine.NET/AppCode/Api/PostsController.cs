@@ -1,11 +1,18 @@
 ﻿using App_Code;
+using BlogEngine.Core;
 using BlogEngine.Core.Data.Contracts;
 using BlogEngine.Core.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
+using System.Web;
 using System.Web.Http;
+
 
 public class PostsController : ApiController
 {
@@ -36,6 +43,9 @@ public class PostsController : ApiController
         if (result == null)
             return Request.CreateResponse(HttpStatusCode.NotModified);
 
+        // Regenerate Sitemap
+        generateSitemap();
+
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
@@ -43,6 +53,10 @@ public class PostsController : ApiController
     public HttpResponseMessage Update([FromBody]PostDetail item)
     {
         repository.Update(item, "update");
+
+        // Regenerate Sitemap
+        generateSitemap();
+        
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
@@ -78,6 +92,35 @@ public class PostsController : ApiController
         if (Guid.TryParse(id, out gId))
             repository.Remove(gId);
 
+        // Regenerate Sitemap
+        generateSitemap();
+
         return Request.CreateResponse(HttpStatusCode.OK);
+    }
+
+    /// <summary>
+    /// Generates and stores the sitemap - everytime we modify / delete / add a post
+    /// </summary>
+    private void generateSitemap()
+    {
+        // Take published posts
+        var posts = repository.Find().Where(x => x.IsPublished == true).ToList();
+
+        // Create the file : text sitemap
+        StringBuilder sb = new StringBuilder();
+        // Get the host
+        var host = Utils.AbsoluteWebRoot.Scheme + "://" + Utils.AbsoluteWebRoot.Host;
+        foreach (var post in posts)
+            sb.AppendLine($"{host}{post.RelativeLink}");
+
+        // Stores the file
+        var inputDirectory = HttpContext.Current.Server.MapPath("~");
+        var fileName = Path.Combine(inputDirectory, "Sitemap", "sitemap.txt");
+        FileStream fParameter = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+        StreamWriter m_WriterParameter = new StreamWriter(fParameter);
+        m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
+        m_WriterParameter.Write(sb.ToString());
+        m_WriterParameter.Flush();
+        m_WriterParameter.Close();
     }
 }
