@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Unity : Managing the State</title>
+  <description>When you code a game with Unity, you invariably come up against the question of State and how to man</description>
+  <content>&lt;p&gt;&lt;img src="/image.axd?picture=/20230907080705612.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;When you code a game with Unity, you invariably come up against the question of State and how to manage it.&lt;/p&gt;
+&lt;p&gt;State refers to the state the game is in at any given moment.&lt;/p&gt;
+&lt;p&gt;For example, your game will most likely start on a &lt;strong&gt;Splash Screen&lt;/strong&gt;, then display an &lt;strong&gt;introduction&lt;/strong&gt; page, allowing you to &lt;strong&gt;choose options&lt;/strong&gt; and &lt;strong&gt;start&lt;/strong&gt; the game.&lt;/p&gt;
+&lt;p&gt;We may then go on to an exposition page, explaining the scene the player is about to arrive in, and then play the game.&lt;/p&gt;
+&lt;p&gt;You might lose a life, then die, or pass the level.&lt;/p&gt;
+&lt;p&gt;All this can be modeled as a sequence of states:&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;public enum GameState
+{
+    SplashScreen,
+    Intro,
+    Settings,
+    Playing,
+    DeathAnimation,
+    GameOver,
+    Winner,
+...
+}&lt;/pre&gt;
+&lt;p&gt;You can switch from one state to another: only certain transitions are possible.&lt;/p&gt;
+&lt;p&gt;The visibility of game objects or UI elements will depend on this state. State management is therefore &lt;strong&gt;vital&lt;/strong&gt; to development.&lt;/p&gt;
+&lt;p&gt;***&lt;/p&gt;
+&lt;p&gt;There are several ways for a developer to manage this state.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Unity&lt;/strong&gt; doesn't define any rules in this respect - implementation is up to you.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;strong&gt;State Pattern&lt;/strong&gt; - many implementations of which can be found on the Internet.&lt;/p&gt;
+&lt;p&gt;These implementations are very complete - in particular, they allow you to easily manage animation transitions of 3D models - but sometimes a little complex for simple applications, and a little difficult to upgrade, when you want to add another state for instance.&lt;/p&gt;
+&lt;p&gt;As far as I'm concerned, I have simpler needs; I don't claim to offer the best solution, but after several attempts at State management, I think I've reached a good compromise between :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;development time / implementation complexity&lt;/li&gt;
+&lt;li&gt;the ability to easily add new states and elements&lt;/li&gt;
+&lt;li&gt;code readability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;We sometimes forget to take into account the &lt;strong&gt;scalability&lt;/strong&gt; of the solution (the ability to add a new state, because we're adding a step that wasn't planned), a mistake that can cost a lot of development time.&lt;/p&gt;
+&lt;p&gt;***&lt;/p&gt;
+&lt;p&gt;From a code structure point of view, we'll create a &lt;em&gt;GameManager&lt;/em&gt; object (in a fairly classic way) which will be the only one &lt;strong&gt;responsible&lt;/strong&gt; to pass the State from one value to another: this is important to separate and isolate responsibilities (and save hours of debugging...😒).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;GameManager&lt;/em&gt; will invoke an event each time a State value is modified; all objects that subscribe to the event will therefore receive the State modification, and can show or hide themselves.&lt;/p&gt;
+&lt;p&gt;By the way:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It's tempting with Unity to Enable or Disable an object entirely to hide it. It's quick and easy.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BUT&lt;/strong&gt;: in the technique I'm proposing, you can't Disable a UI panel entirely, for example, otherwise it won't be able to receive an event!&lt;/p&gt;
+&lt;p&gt;What I propose instead is to Disable &lt;strong&gt;all&lt;/strong&gt; the panel's children (and &lt;strong&gt;not&lt;/strong&gt; the panel itself); this way, it will continue to receive the State change event, and will be able to display its children again.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We create a &lt;em&gt;CommonTools.cs&lt;/em&gt; script, which will contain the methods used to display or hide a panel's children:&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+/// &amp;lt;summary&amp;gt;
+/// Tools used to display / hide all the children of a panel
+/// &amp;lt;/summary&amp;gt;
+public class CommonTools : MonoBehaviour
+{
+    public static void HideChildren(GameObject go)
+    {
+        // Hide children
+        for (int i = 0; i &amp;lt; go.transform.childCount; i++)
+        {
+            var child = go.transform.GetChild(i);
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    public static void ShowChildren(GameObject go)
+    {
+        // Show
+        for (int i = 0; i &amp;lt; go.transform.childCount; i++)
+        {
+            var child = go.transform.GetChild(i);
+            child.gameObject.SetActive(true);
+        }
+
+    }
+}&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;When the state changes, panels that need to be displayed or hidden will call these methods - we'll see about that later.&lt;/p&gt;
+&lt;p&gt;We create a &lt;em&gt;GameManager.cs&lt;/em&gt; script and associate it with the &lt;em&gt;GameManager&lt;/em&gt; object.&lt;/p&gt;
+&lt;p&gt;In this script, we define the enum containing the various possible States, and we add an Action, which is an event that will be invoked each time a State changes:&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;public class GameManager : MonoBehaviour
+{
+    public static Action&amp;lt;GameState&amp;gt; StateHasChanged; // Event invoked when state changes
+
+...
+}
+
+public enum GameState
+{
+    Intro,
+    Playing,
+    GameOver,
+    Winning
+}&lt;/pre&gt;
+&lt;p&gt;For this example, we're going to add a PanelIntro, which is displayed when the game starts - showing options and a Play button.&lt;/p&gt;
+&lt;p&gt;The object hierarchy will be as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;img src="/image.axd?picture=/image (1).png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;PanelIntro&lt;/em&gt; object is a Panel, from which we've removed the image (the panel is a graphically empty object), and which uses a PanelIntro.cs script.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/image.axd?picture=/image (2).png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;PanelIntro.cs&lt;/em&gt; code :&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PanelIntro : MonoBehaviour
+{
+    public static Action PanelIntroHasClosed;
+
+    private void Awake()
+    {
+        // Register to GameManager change state
+        GameManager.StateHasChanged += GameManager_StateHasChanged;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void GameManager_StateHasChanged(GameState newState)
+    {
+        if (newState == GameState.Intro)
+            CommonTools.ShowChildren(this.gameObject); // Show all the children
+        else
+            CommonTools.HideChildren(this.gameObject);
+    }
+
+    public void BtnClosedHasBeenPressed()
+    {
+        PanelIntroHasClosed?.Invoke();
+    }
+}&lt;/pre&gt;
+&lt;p&gt;A few explanations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The button in the Panel calls the PanelIntro object's BtnClosedHasBeenPressed() function.&lt;/li&gt;
+&lt;li&gt;PanelIntro has a PanelIntroHasClosed event that will be triggered when the button is pressed&lt;/li&gt;
+&lt;li&gt;PanelIntro subscribes to GameManager's StateHasChanged event&lt;/li&gt;
+&lt;li&gt;PanelIntro displays all its children when State = Intro, otherwise hides them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, here's the code for the &lt;em&gt;GameManager.cs&lt;/em&gt; script:&lt;/p&gt;
+&lt;pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false"&gt;using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
+
+public class GameManager : MonoBehaviour
+{
+    public static Action&amp;lt;GameState&amp;gt; StateHasChanged; // Event invoked when state changes
+
+    private GameState state; // Current State of the game
+
+    private void Awake()
+    {
+        // Register to PanelIntro events
+        PanelIntro.PanelIntroHasClosed += PanelIntro_PanelIntroHasClosed;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Starts by setting the default State (this way, objects will show / hide accordingly)
+        switchToNextState(GameState.Intro);
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void switchToNextState(GameState newState)
+    {
+        Debug.Log("Switch to" + newState.ToString());
+        state = newState;
+
+        // Send message to observers
+        StateHasChanged?.Invoke(newState);
+
+        switch (newState)
+        {
+            case GameState.Intro:
+                // Control is passed to PanelIntro object
+                break;
+            case GameState.Playing:
+                // Do what you need to do
+                // ...
+                break;
+            case GameState.GameOver:
+                // Control is passed to PanelIntro object
+                break;
+        }
+
+    }
+
+    private void PanelIntro_PanelIntroHasClosed()
+    {
+        // Ok, panel intro has been closed
+        // Time to do some stuff and switch to another state - for instance Playing
+        // ...
+
+        switchToNextState(GameState.Playing);
+    }
+
+}
+
+public enum GameState
+{
+    Intro,
+    Playing,
+    GameOver,
+    Winning
+}&lt;/pre&gt;
+&lt;p&gt;A few more explanations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GameManager is the only one to change the state via the switchToNextState &lt;strong&gt;private&lt;/strong&gt; method: so there's no risk of changing the state in another object&lt;/li&gt;
+&lt;li&gt;GameManager subscribes to the PanelIntro event at the start&lt;/li&gt;
+&lt;li&gt;To initialize the State, &lt;em&gt;switchToNextState&lt;/em&gt; is called from the Start() method.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here's how it all works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each child object (Panel in particular) subscribes to &lt;em&gt;StateHasChanged&lt;/em&gt; to find out when the state changes, then displays / hides its children, and does what it has to do.&lt;/li&gt;
+&lt;li&gt;GameManager lets each Panel manage its own operation: responsibilities respected&lt;/li&gt;
+&lt;li&gt;If you want to add a new state and a new panel, you'll need to add an event to the new panel, and have GameManager subscribe to it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The advantage of this system is that it's easy to evolve a project and add more without getting bogged down in code and side effects.&lt;/p&gt;
+&lt;p&gt;Don't hesitate to give it a try and let me know what you think 😉.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2023-09-07 09:55:00</pubDate>
+  <lastModified>2023-09-07 08:25:48</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>unity-managing-the-state</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

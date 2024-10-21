@@ -10,7 +10,7 @@
   <showdescriptioninpostlist>False</showdescriptioninpostlist>
   <commentsperpage>10</commentsperpage>
   <feedauthor />
-  <description>Short description of the blog</description>
+  <description>Blog for AutreMachine company</description>
   <enablepingbacksend>True</enablepingbacksend>
   <postoptionscustomfields>True</postoptionscustomfields>
   <enabletagexport>True</enabletagexport>
@@ -56,7 +56,7 @@
   <commentprovider>BlogEngine</commentprovider>
   <postsperfeed>3</postsperfeed>
   <sendmailoncomment>True</sendmailoncomment>
-  <culture>Auto</culture>
+  <culture>en</culture>
   <remotemaxfilesize>524288</remotemaxfilesize>
   <redirecttoremovefileextension>False</redirecttoremovefileextension>
   <syndicationformat>Rss</syndicationformat>

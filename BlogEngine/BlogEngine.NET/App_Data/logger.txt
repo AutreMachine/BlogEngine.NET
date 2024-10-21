@@ -53,35 +53,104 @@ BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbi
 Date: 20/07/2023 17:11:46
 BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 14/08/2023 19:25:03
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 21/07/2023 07:43:58
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 14/08/2023 19:38:10
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 21/07/2023 07:43:58
+GET https://www.autremachine.com/api/dashboard: Error getting value from 'Logs' on 'BlogEngine.Core.Data.ViewModels.DashboardVM'.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 15/08/2023 12:44:14
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 21/07/2023 08:20:57
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 25/08/2023 10:10:55
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 25/07/2023 11:38:58
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 25/08/2023 10:20:33
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 28/07/2023 13:16:29
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:25:27
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 10/08/2023 09:40:26
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:37:41
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 14/08/2023 17:24:17
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:37:56
-PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+Date: 14/08/2023 17:41:22
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:38:07
-PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+Date: 15/08/2023 09:19:13
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:38:46
-PUT http://localhost:64079/api/posts/update/foo: Impossible de trouver une partie du chemin d'accès 'C:\Sitemap\sitemap.txt'.
+Date: 15/08/2023 10:17:57
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-Date: 27/08/2023 11:44:55
-BlogEngine.Core.Packaging.Load: Could not connect to the feed specified at 'https://serp.ai/'. Please verify that the package source (located in the Package Manager Settings) is valid and ensure your network connectivity.
+Date: 15/08/2023 13:03:41
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 15/08/2023 13:03:41
+GET https://www.autremachine.com/api/dashboard: Error getting value from 'Logs' on 'BlogEngine.Core.Data.ViewModels.DashboardVM'.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 8/24/2023 10:03:59 AM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 8/25/2023 8:05:54 AM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 8/25/2023 8:26:40 AM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 8/27/2023 9:54:24 AM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 10/9/2023 9:25:24 AM
+GET https://www.autremachine.com/api/settings/values: An error occurred when trying to create a controller of type 'SettingsController'. Make sure that the controller has a parameterless public constructor.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 11/13/2023 9:08:02 AM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (403) Forbidden.
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 3/4/2024 5:26:14 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.192.116]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 4/20/2024 8:45:43 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 4/21/2024 11:07:14 PM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 4/23/2024 9:29:04 PM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 5/9/2024 4:09:19 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 5/17/2024 6:50:49 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 5/23/2024 4:55:57 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 5/28/2024 5:24:00 PM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 6/7/2024 7:58:14 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 6/13/2024 10:51:06 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 6/23/2024 3:48:04 PM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 6/30/2024 1:52:46 PM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.192.116]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 8/2/2024 8:33:02 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.192.116]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 9/3/2024 9:57:40 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 10/19/2024 9:27:02 AM
+Error sending email in SendMailMessage:  Transaction failed. The server response was: 5.7.1 <unknown[20.103.193.138]>: Client host rejected: Access denied
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 10/21/2024 4:11:55 PM
+BlogEngine.Core.Packaging.Load: The remote server returned an error: (404) Not Found.

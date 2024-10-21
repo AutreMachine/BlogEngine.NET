@@ -2,5 +2,7 @@
 <categories>
     <category id="1cfe78e4-6ac5-43c8-b8ed-5d89c1925faa" description="" parent="">Blazor</category>
     <category id="19770e74-9ec9-4cde-b2ab-e5051aaaf348" description="Posts about my adventures with BlogEngine.NET" parent="">BlogEngine.NET</category>
+    <category id="6bb57917-97b8-4f43-80e3-a13962528670" description="" parent="">Scribla</category>
+    <category id="d9daeff5-286a-496a-a292-b2395f3755d0" description="" parent="">SpeedBlazing2</category>
     <category id="1bef2b78-8eb2-4dae-a8b1-9d5bb14ec182" description="" parent="">Unity</category>
 </categories>

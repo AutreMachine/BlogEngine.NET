@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widgets>
   <widget id="b172c1cc-9cf4-447f-8d09-73c6794b7492" title="TagCloud" showTitle="True">TagCloud</widget>
+  <widget id="f41e0d52-f7b0-4e40-ab7a-acfa721c07c5" title="PageList" showTitle="True">PageList</widget>
 </widgets>
